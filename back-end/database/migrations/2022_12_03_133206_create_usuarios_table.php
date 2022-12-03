@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('login');
             $table->string('senha');
-            $table->string('url_foto');
+            $table->string('url_foto')->nullable();
             $table->string('email');
-            $table->string('telefone');
+            $table->string('telefone')->nullable();
             $table->char('inativo');
         });
     }

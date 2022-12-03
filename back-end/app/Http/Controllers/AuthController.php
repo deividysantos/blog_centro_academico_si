@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Usuarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -21,7 +21,10 @@ class AuthController extends Controller
             'senha' => 'required|string',
         ]);
 
-        $credentials = $request->only('email', 'senha');
+        $credentials = [
+            'email' => $request['email'],
+            'password' => $request['senha'],
+        ];
 
         $token = Auth::attempt($credentials);
 
@@ -44,17 +47,19 @@ class AuthController extends Controller
 
     }
 
-    public function register(Request $request){
+    public function register(Request $request)
+    {
         $request->validate([
-            'nome' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'login' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:usuarios',
             'senha' => 'required|string|min:6',
         ]);
 
-        $user = User::create([
-            'nome' => $request->name,
+        $user = Usuarios::create([
+            'login' => $request->login,
             'email' => $request->email,
-            'senha' => Hash::make($request->password),
+            'senha' => Hash::make($request->senha),
+            'inativo' => 'N',
         ]);
 
         $token = Auth::login($user);
