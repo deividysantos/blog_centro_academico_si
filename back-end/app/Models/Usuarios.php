@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
-class Usuarios extends Model
+class Usuarios extends Authenticable implements JWTSubject
 {
     use HasFactory;
 
@@ -23,8 +24,22 @@ class Usuarios extends Model
         'inativo'
     ];
 
+    protected $hidden = [
+        'senha'
+    ];
+
     public function Eleicoes()
     {
         return $this->hasMany(Eleicoes::class);
+    }
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 }
