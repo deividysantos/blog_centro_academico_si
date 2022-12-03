@@ -13,10 +13,10 @@ class Eleicoes extends Model
     public $timestamps  = false;
 
     protected $fillable = [
-        id_eleicao,
-        id_semestre,
-        id_usuario,
-        id_cargo
+        'id_eleicao',
+        'id_semestre',
+        'id_usuario',
+        'id_cargo'
     ];
 
     public function semestre()

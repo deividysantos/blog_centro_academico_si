@@ -14,8 +14,8 @@ class Cargos extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        nome,
-        nivel_hierarquia
+        'nome',
+        'nivel_hierarquia'
     ];
 
     public function Eleicoes()

@@ -14,13 +14,13 @@ class Usuarios extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        login,
-        senha,
-        url_foto,
-        nome,
-        email,
-        telefone,
-        inativo
+        'login',
+        'senha',
+        'url_foto',
+        'nome',
+        'email',
+        'telefone',
+        'inativo'
     ];
 
     public function Eleicoes()

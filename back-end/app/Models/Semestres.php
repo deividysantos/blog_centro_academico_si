@@ -13,9 +13,9 @@ class Semestres extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        data_inicio,
-        data_fim,
-        descricao
+        'data_inicio',
+        'data_fim',
+        'descricao'
     ];
 
     public function Eleicoes()
