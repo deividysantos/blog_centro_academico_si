@@ -2,7 +2,7 @@
 ####  id_semestre,
 ####  data_inicio,
 ####  data_fim,
-####  descricao_semestre
+####  descricao
 
 ## Usuarios
 ####  id_usuario,
@@ -17,7 +17,7 @@
 ## Cargos 
 ####  id_cargo,
 ####  nome,
-####  nivel_usuario
+####  nivel_hierarquia
 
 ## Eleicao
 ####  id_eleicao,
