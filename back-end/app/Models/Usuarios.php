@@ -31,7 +31,7 @@ class Usuarios extends Authenticatable implements JWTSubject
 
     public function Eleicoes()
     {
-        return $this->hasMany(Eleicoes::class);
+        return $this->hasMany(Eleicoes::class, 'id_usuario', 'id');
     }
 
     public function getJWTIdentifier()

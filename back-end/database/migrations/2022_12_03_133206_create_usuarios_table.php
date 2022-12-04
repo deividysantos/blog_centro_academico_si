@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('telefone')->nullable();
             $table->char('inativo');
         });
+
+        Artisan::call('db:seed', array('--class' => 'UsuariosSeeder'));
     }
 
     /**
