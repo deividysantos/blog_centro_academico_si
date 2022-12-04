@@ -13,12 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('eleicoes', function (Blueprint $table) {
-            $table->id();
-            $table->year('ano', 4);
-            $table->foreignId('id_usuario')->references('id')->on('usuarios');
-            $table->foreignId('id_cargo')->references('id')->on('cargos');
-        });
+        Schema::dropIfExists('semestres');
     }
 
     /**
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eleicoes');
+        //
     }
 };

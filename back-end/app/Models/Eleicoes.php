@@ -14,15 +14,10 @@ class Eleicoes extends Model
 
     protected $fillable = [
         'id_eleicao',
-        'id_semestre',
+        'ano',
         'id_usuario',
         'id_cargo'
     ];
-
-    public function semestre()
-    {
-        return $this->belongsTo(Semestres::class);
-    }
 
     public function usuario()
     {
