@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('nome');
             $table->char('nivel_hierarquia');
         });
+
+        Artisan::call('db:seed', array('--class' => 'CargosSeeder'));
     }
 
     /**
