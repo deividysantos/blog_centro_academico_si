@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cargos extends Model
+class Cargo extends Model
 {
     use HasFactory;
 
@@ -14,12 +14,13 @@ class Cargos extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'id',
         'nome',
         'nivel_hierarquia'
     ];
 
-    public function Eleicoes()
+    public function eleicao()
     {
-        return $this->hasMany(Eleicoes::class);
+        return $this->hasMany(Eleicao::class);
     }
 }

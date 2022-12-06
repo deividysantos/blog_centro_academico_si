@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('eleicoes', function (Blueprint $table) {
             $table->id();
             $table->year('ano', 4);
-            $table->foreignId('id_usuario')->references('id')->on('usuarios');
-            $table->foreignId('id_cargo')->references('id')->on('cargos');
+            $table->foreignId('usuario_id')->references('id')->on('usuarios');
+            $table->foreignId('cargo_id')->references('id')->on('cargos');
         });
+
+        Artisan::call('db:seed', array('--class' => 'EleicoesSeeder'));
     }
 
     /**

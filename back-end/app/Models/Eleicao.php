@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Eleicoes extends Model
+class Eleicao extends Model
 {
     use HasFactory;
     protected $table = 'eleicoes';
@@ -13,19 +13,19 @@ class Eleicoes extends Model
     public $timestamps  = false;
 
     protected $fillable = [
-        'id_eleicao',
+        'id',
         'ano',
-        'id_usuario',
-        'id_cargo'
+        'usuario_id',
+        'cargo_id'
     ];
 
     public function usuario()
     {
-        return $this->belongsTo(Usuarios::class);
+        return $this->belongsTo(Usuario::class);
     }
 
     public function cargo()
     {
-        return $this->belongsTo(Cargos::class);
+        return $this->belongsTo(Cargo::class);
     }
 }

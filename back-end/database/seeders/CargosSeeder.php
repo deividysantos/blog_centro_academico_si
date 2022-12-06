@@ -46,6 +46,10 @@ class CargosSeeder extends Seeder
                 'nome' => 'Suplente',
                 'nivel_hierarquia' => 'H',
             ],
+            [
+                'nome' => 'Admin',
+                'nivel_hierarquia' => 'X',
+            ],
         ];
 
         foreach ($cargos as $cargo)

@@ -25,5 +25,5 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(EleicoesController::class)->group(function (){
    Route::post('eleicao', 'postCreateEleicao');
-   Route::delete('eleicao/{eleicoes}', 'deleteEleicao');
+   Route::delete('eleicao/{eleicao}', 'deleteEleicao');
 });

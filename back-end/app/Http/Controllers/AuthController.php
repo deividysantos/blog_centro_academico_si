@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Usuarios;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -55,7 +55,7 @@ class AuthController extends Controller
             'senha' => 'required|string|min:6',
         ]);
 
-        $user = Usuarios::create([
+        $user = Usuario::create([
             'login' => $request->login,
             'email' => $request->email,
             'senha' => Hash::make($request->senha),

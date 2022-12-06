@@ -18,7 +18,7 @@ class UsuariosSeeder extends Seeder
     {
         DB::table('usuarios')->insert([
             'login' => 'Deividy',
-            'senha' => Hash::make('deividy123'),
+            'senha' => Hash::make(getenv('PASS')),
             'email' => 'deividyosantos27@gmail.com',
             'inativo' => 'N',
         ]);
